@@ -84,8 +84,6 @@
             <RadioButton
                 android:id="@+id/tab1"
                 android:text="首页"
-                android:button="@null"
-
                 style="@style/navigation_tab"
                 />
             <RadioButton

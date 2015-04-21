@@ -18,18 +18,22 @@
 
         <RadioButton
             android:id="@+id/rb1"
+            android:drawableTop="@drawable/checked_selector"
             style="@style/shouye_topdian" />
 
         <RadioButton
             android:id="@+id/rb2"
+            android:drawableTop="@drawable/checked_selector"
             style="@style/shouye_topdian"/>
 
         <RadioButton
             android:id="@+id/rb3"
+            android:drawableTop="@drawable/checked_selector"
             style="@style/shouye_topdian"/>
 
         <RadioButton
             android:id="@+id/rb4"
+            android:drawableTop="@drawable/checked_selector"
             style="@style/shouye_topdian"/>
     </RadioGroup>
 
