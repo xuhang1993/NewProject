@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.administrator.newproject" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -18,13 +19,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:parentActivityName=".MainActivity"
             android:name=".SecondActivity"
-            android:label="@string/title_activity_second" >
+            android:label="@string/title_activity_second"
+            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
             android:name=".SecrchActivity"
             android:label="@string/title_activity_secrch" >
+        </activity>
+        <activity
+            android:name=".ThridActivity"
+            android:label="@string/title_activity_thrid" >
         </activity>
     </application>
 
