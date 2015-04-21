@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="44dp">
+<ImageView
+    android:id="@+id/wofrag_tubiao"
+    android:layout_width="60dp"
+    android:layout_height="44dp" />
+   <TextView
+       android:id="@+id/wofrag_text"
+       android:layout_width="0dp"
+       android:text="aaa"
+       android:layout_marginLeft="25dp"
+       android:gravity="center_vertical"
+       android:layout_weight="1"
+       android:textSize="18sp"
+       android:layout_height="match_parent" />
+<ImageView
+    android:src="@drawable/ic_right"
+    android:layout_width="30dp"
+    android:layout_height="match_parent" />
+
+
+
+</LinearLayout>

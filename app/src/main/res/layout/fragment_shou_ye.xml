@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.aaa.pinan.ShouYeFragment">
+    <LinearLayout
+        android:id="@+id/top_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp">
+        <Button
+            android:id="@+id/kanfang"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="看房"
+            android:background="#ddd"
+            android:drawableTop="@drawable/shouye_button1tupian_selector"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/ershoufang"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="二手房"
+            android:background="#ddd"
+            android:drawableTop="@drawable/shouye_button2tupian_selector"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/kanfangtuan"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="看房团"
+            android:background="#ddd"
+            android:drawableTop="@drawable/shouye_button4tupian_selector"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

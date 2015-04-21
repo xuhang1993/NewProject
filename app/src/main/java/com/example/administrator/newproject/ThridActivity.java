@@ -1,5 +1,6 @@
 package com.example.administrator.newproject;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -36,7 +37,7 @@ import Bean.AreaNmae;
 
 public class ThridActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
 
-    private String id;
+    private String cityid;
     private String name;
     private Toolbar toolbar;
     private ListView listView;
@@ -53,7 +54,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thrid);
 
-        id = getIntent().getStringExtra("id");
+        cityid = getIntent().getStringExtra("id");
         name = getIntent().getStringExtra("name");
 
         toolbar = (Toolbar) findViewById(R.id.toolbar4);
@@ -80,7 +81,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
         requestParams = new RequestParams();
 
-        requestParams.addBodyParameter("cityId",id);
+        requestParams.addBodyParameter("cityId",cityid);
         HttpUtils utils=new HttpUtils();
         utils.send(HttpRequest.HttpMethod.POST,"http://m.jiwu.com/app!cityDetail.action?v=1&appKey=",requestParams,new RequestCallBack<Object>() {
             @Override
@@ -136,7 +137,13 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
 
 
+        Intent i=new Intent();
+        i.putExtra("id",cityid);
+        i.putExtra("name",name);
+        i.putExtra("areaName",list.get(position).getAreaName());
+        i.setClass(ThridActivity.this,SecrchActivity.class);
 
+        startActivity(i);
 
     }
 }

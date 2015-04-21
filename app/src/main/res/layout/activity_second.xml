@@ -1,7 +1,8 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     >
 
     <android.support.v7.widget.Toolbar
@@ -62,4 +63,41 @@
         </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
-</RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:id="@+id/cont"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioGroup
+            android:id="@+id/tabgroup"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:id="@+id/tab1"
+                android:text="首页"
+                android:button="@null"
+
+                style="@style/navigation_tab"
+                />
+            <RadioButton
+                android:id="@+id/tab2"
+                android:text="我"
+                style="@style/navigation_tab"
+                />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+</LinearLayout>
