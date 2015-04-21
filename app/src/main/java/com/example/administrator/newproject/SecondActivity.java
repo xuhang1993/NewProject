@@ -26,7 +26,7 @@ public class SecondActivity extends ActionBarActivity implements Toolbar.OnMenuI
         setContentView(R.layout.activity_second);
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-
+        //toolbar
 
         toolbar.setOnMenuItemClickListener(this);
 
