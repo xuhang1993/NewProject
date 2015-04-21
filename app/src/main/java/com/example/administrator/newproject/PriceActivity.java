@@ -1,22 +1,16 @@
 package com.example.administrator.newproject;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.RequestParams;
@@ -30,51 +24,44 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import Adapter.AreaAdapter;
+import Adapter.PriceAdapter;
 import Bean.AreaNmae;
+import Bean.Price;
 
 
-public class ThridActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class PriceActivity extends ActionBarActivity {
 
-    private String id;
-    private String name;
-    private Toolbar toolbar;
-    private ListView listView;
-    private RequestQueue requestQueue;
-    private ArrayList<AreaNmae> list;
-
-    private JsonObjectRequest jsonObjectRequest;
-    private AreaAdapter adapter;
-    private String TAG="name";
+    private Toolbar toolBar;
     private RequestParams requestParams;
+    private String id;
+    private ArrayList<Price> list;
+    private PriceAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_thrid);
+        setContentView(R.layout.activity_price);
 
-        id = getIntent().getStringExtra("id");
-        name = getIntent().getStringExtra("name");
+        toolBar = (Toolbar) findViewById(R.id.toolbar5);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar4);
-
+        toolBar.setTitle("价格");
         getSupportActionBar().hide();
-        toolbar.setTitle(name);
+        Intent intent=getIntent();
 
-        listView = (ListView) findViewById(R.id.cityList);
+        id = intent.getStringExtra("id");
 
-        list=new ArrayList<AreaNmae>();
+        ProgressBar bar= (ProgressBar) findViewById(R.id.progressBar2);
 
-        adapter=new AreaAdapter(ThridActivity.this,list);
-        listView.setAdapter(adapter);
-        ProgressBar bar= (ProgressBar) findViewById(R.id.progressBar);
+        ListView listView= (ListView) findViewById(R.id.priceList);
         listView.setEmptyView(bar);
+        list=new ArrayList<Price>();
+        adapter=new PriceAdapter(PriceActivity.this,list);
 
-        listView.setOnItemClickListener(this);
+        listView.setAdapter(adapter);
+
         getList();
 
     }
-
     public void getList(){
 
 
@@ -82,7 +69,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
         requestParams.addBodyParameter("cityId",id);
         HttpUtils utils=new HttpUtils();
-        utils.send(HttpRequest.HttpMethod.POST,"http://m.jiwu.com/app!cityDetail.action?v=1&appKey=",requestParams,new RequestCallBack<Object>() {
+        utils.send(HttpRequest.HttpMethod.POST,"http://m.jiwu.com/app!priceList.action?v=1&appKey=",requestParams,new RequestCallBack<Object>() {
             @Override
             public void onSuccess(ResponseInfo<Object> objectResponseInfo) {
 
@@ -92,19 +79,19 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
                 try {
                     JSONObject object=new JSONObject(json);
-                    JSONArray array = object.getJSONArray("areaArray");
+                    JSONArray array = object.getJSONArray("priceArray");
                     for (int i = 0; i < array.length(); i++) {
 
                         JSONObject object1 = array.getJSONObject(i);
 
-                        String areaName = object1.getString("areaName");
+                        String priceName = object1.getString("priceName");
                         //Log.i(TAG,areaName+"=================");
-                        String cityId = object1.getString("cityId");
-                        String areaId = object1.getString("areaId");
+                        String priceId = object1.getString("priceId");
 
-                        AreaNmae areaNmae = new AreaNmae(areaName, areaId, cityId);
 
-                        list.add(areaNmae);
+                        Price price = new Price(priceName,priceId);
+
+                        list.add(price);
                     }
 
                     adapter.notifyDataSetChanged();
@@ -121,7 +108,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
             @Override
             public void onFailure(HttpException e, String s) {
 
-                Toast.makeText(ThridActivity.this,"下载失败!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(PriceActivity.this, "下载失败!", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -130,13 +117,4 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
     }
 
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-
-
-
-    }
 }

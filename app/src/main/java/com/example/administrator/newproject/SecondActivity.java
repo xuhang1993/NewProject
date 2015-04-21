@@ -49,6 +49,8 @@ public class SecondActivity extends ActionBarActivity implements Toolbar.OnMenuI
 
                 Intent i=new Intent();
 
+                i.putExtra("id",id);
+                i.putExtra("name",name);
                 i.setClass(SecondActivity.this,SecrchActivity.class);
 
                 startActivity(i);

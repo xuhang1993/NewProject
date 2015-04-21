@@ -31,6 +31,10 @@
             android:name=".ThridActivity"
             android:label="@string/title_activity_thrid" >
         </activity>
+        <activity
+            android:name=".PriceActivity"
+            android:label="@string/title_activity_price" >
+        </activity>
     </application>
 
 </manifest>

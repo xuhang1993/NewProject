@@ -6,26 +6,26 @@
     >
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/toolbar5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_red_round"
 
         >
-        </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/progressBar"
+        android:id="@+id/progressBar2"
         />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/cityList"
-        android:layout_below="@+id/toolbar4"
+        android:id="@+id/priceList"
+        android:layout_below="@+id/toolbar5"
         >
 
 
-        </ListView>
+    </ListView>
 </RelativeLayout>
