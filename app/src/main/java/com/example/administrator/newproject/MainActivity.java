@@ -103,8 +103,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
                         String id=object2.getString("cityId");
 
-                        Log.i(TAG, name + "====");
-                        Log.i(TAG,id+"====");
+                       // Log.i(TAG, name + "====");
+                        //Log.i(TAG,id+"====");
                         CityName cityName=new CityName(name,id);
 
                         datas.add(cityName);

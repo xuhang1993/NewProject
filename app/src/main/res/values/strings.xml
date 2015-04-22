@@ -34,15 +34,20 @@
 
 
 
-    <style name="shouye_topdian">
-        <item name="android:gravity">center_horizontal</item>
-        <item name="android:layout_width">10dp</item>
-        <item name="android:layout_height">10dp</item>
-        <item name="android:background">#999</item>
+    <!--<style name="shouye_topdian">
+        <item name="android:gravity">left</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
         <item name="android:layout_marginLeft">10dp</item>
+    </style>-->
+
+    <style name="radioStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:button">@null</item>
     </style>
-
-
 
 
     <drawable name="shouye_button1">@drawable/xf_normal</drawable>

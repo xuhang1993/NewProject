@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="250dp">
+    android:layout_width="match_parent" android:layout_height="220dp"
+    android:orientation="vertical"
+    >
 
     <android.support.v4.view.ViewPager
         android:id="@+id/fa_toppager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="220dp" >
+    </android.support.v4.view.ViewPager>
 
     <RadioGroup
         android:id="@+id/fragment_top_radio"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:orientation="horizontal"
         android:gravity="center_horizontal"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="bottom">
+        android:layout_gravity="center_horizontal|bottom">
 
         <RadioButton
             android:id="@+id/rb1"
             android:drawableTop="@drawable/checked_selector"
-            style="@style/shouye_topdian" />
+            style="@style/radioStyle" />
 
         <RadioButton
             android:id="@+id/rb2"
             android:drawableTop="@drawable/checked_selector"
-            style="@style/shouye_topdian"/>
+            style="@style/radioStyle"/>
 
         <RadioButton
             android:id="@+id/rb3"
             android:drawableTop="@drawable/checked_selector"
-            style="@style/shouye_topdian"/>
+            style="@style/radioStyle"/>
 
         <RadioButton
             android:id="@+id/rb4"
             android:drawableTop="@drawable/checked_selector"
-            style="@style/shouye_topdian"/>
+            style="@style/radioStyle"/>
     </RadioGroup>
-
 
 
 </FrameLayout>

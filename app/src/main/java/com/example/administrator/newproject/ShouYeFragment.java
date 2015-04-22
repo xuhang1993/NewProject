@@ -25,17 +25,6 @@ public class ShouYeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_shou_ye, container, false);
         FragmentTransaction ftshouye = getActivity().getSupportFragmentManager().beginTransaction();
         ftshouye.add(R.id.top_container,new TopFragment()).commit();
-
-
-
-
-
-
-
-
-
-
-
         return view;
     }
 

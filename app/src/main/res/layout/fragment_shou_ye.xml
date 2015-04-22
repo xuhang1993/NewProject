@@ -7,7 +7,7 @@
         android:id="@+id/top_container"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="260dp"/>
+        android:layout_height="220dp"/>
 
 
     <LinearLayout
@@ -15,20 +15,67 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
+        <!--<LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/kanfang"
+                android:background="@drawable/shouye_button1tupian_selector"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="新房"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                />
+        </LinearLayout>-->
         <Button
             android:id="@+id/kanfang"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:text="看房"
-            android:background="#ddd"
+            android:text="新房"
+            android:background="#fff"
             android:drawableTop="@drawable/shouye_button1tupian_selector"
             android:layout_height="match_parent" />
+
+      <!--  <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/ershoufang"
+                android:background="@drawable/shouye_button2tupian_selector"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="二手房"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                />
+        </LinearLayout>-->
         <Button
             android:id="@+id/ershoufang"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="二手房"
-            android:background="#ddd"
+            android:background="#fff"
             android:drawableTop="@drawable/shouye_button2tupian_selector"
             android:layout_height="match_parent" />
 
@@ -37,7 +84,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:text="看房团"
-            android:background="#ddd"
+            android:background="#fff"
             android:drawableTop="@drawable/shouye_button4tupian_selector"
             android:layout_height="match_parent" />
 

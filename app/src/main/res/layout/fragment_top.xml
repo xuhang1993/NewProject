@@ -3,12 +3,12 @@
     android:layout_width="match_parent" android:layout_height="250dp">
 
     <android.support.v4.view.ViewPager
-        android:id="@+id/fa_toppager"
+        android:id="@+id/fa_toppager1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <RadioGroup
-        android:id="@+id/fragment_top_radio"
+        android:id="@+id/fragment_top_radio1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -17,20 +17,20 @@
         android:layout_gravity="bottom">
 
         <RadioButton
-            android:id="@+id/rb1"
-            style="@style/shouye_topdian" />
+            android:id="@+id/rb11"
+            style="@style/radioStyle" />
 
         <RadioButton
-            android:id="@+id/rb2"
-            style="@style/shouye_topdian"/>
+            android:id="@+id/rb21"
+            style="@style/radioStyle"/>
 
         <RadioButton
-            android:id="@+id/rb3"
-            style="@style/shouye_topdian"/>
+            android:id="@+id/rb31"
+            style="@style/radioStyle"/>
 
         <RadioButton
-            android:id="@+id/rb4"
-            style="@style/shouye_topdian"/>
+            android:id="@+id/rb41"
+            style="@style/radioStyle"/>
     </RadioGroup>
 
 
