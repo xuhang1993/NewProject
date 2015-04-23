@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import Bean.TopData;
 /**
  * A simple {@link android.support.v4.app.Fragment} subclass.
  */
-public class TopFragment extends Fragment {
+public class TopFragment extends Fragment implements ViewPager.OnPageChangeListener {
 
     private RadioGroup radioGoup;
     private RequestQueue requestQueue;
@@ -50,14 +51,23 @@ public class TopFragment extends Fragment {
 
         radioGoup = (RadioGroup) view.findViewById(R.id.fragment_top_radio);
 
-
         list=new ArrayList<TopData>();
         adapter=new TopDataAdapter(getActivity(),list);
 
         pager.setAdapter(adapter);
         getTopData();
+
+        pager.setOnPageChangeListener(this);
+
+        //设置默认选中
+
+        ((RadioButton)radioGoup.getChildAt(0)).setChecked(true);
+
+
         return view;
     }
+
+
 
 
     public void getTopData(){
@@ -110,4 +120,24 @@ public class TopFragment extends Fragment {
 
     }
 
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+
+        RadioButton button= (RadioButton) radioGoup.getChildAt(position);
+
+        button.setChecked(true);
+
+
+
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 }

@@ -85,12 +85,16 @@
             <RadioButton
                 android:id="@+id/tab1"
                 android:text="首页"
-                style="@style/navigation_tab"
+                 style="@style/radioStyle"
+                android:gravity="center"
+                android:drawableTop="@drawable/checked_shouye"
                 />
             <RadioButton
                 android:id="@+id/tab2"
-                android:text="我"
-                style="@style/navigation_tab"
+                android:text="个人中心"
+               style="@style/radioStyle"
+                android:gravity="center"
+                android:drawableTop="@drawable/checked_geren"
                 />
 
 

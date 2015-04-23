@@ -33,7 +33,7 @@ public class ImageUtils {
 
         BitmapUtils utils=new BitmapUtils(context,f.getPath(),0.4f,20*1024*1024);
 
-        utils.configDefaultLoadFailedImage(R.drawable.ic_launcher);
+        utils.configDefaultLoadFailedImage(R.drawable.no_msg_iclunch_new);
 
 
 

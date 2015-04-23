@@ -149,8 +149,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
         i.setClass(MainActivity.this,SecondActivity.class);
 
-        startActivity(i);
         this.finish();
+        startActivity(i);
 
     }
 }

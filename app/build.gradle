@@ -5,11 +5,18 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.example.administrator.newproject"
+        applicationId "com.cn.xu"
         minSdkVersion 13
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+
+
     }
     buildTypes {
         release {
@@ -25,4 +32,6 @@ dependencies {
     compile files('libs/xUtils-2.6.14.jar')
     compile project(':PullToRefreshlibrary')
     compile project(':SlidingMenulibrary')
+    compile files('libs/baidumapapi_v3_3_0.jar')
+    compile files('libs/locSDK_5.01.jar')
 }

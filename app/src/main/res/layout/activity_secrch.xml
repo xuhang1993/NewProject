@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tv4"
             android:text="请选择区域"
-            android:textSize="24dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             />
         <ImageView
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/price"
             android:text="请选择价格"
-            android:textSize="24dp"
+            android:textSize="18dp"
             android:textStyle="bold"
             />
         <ImageView
@@ -95,11 +95,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/type"
-            android:text="请选择户型"
-            android:textSize="24dp"
+            android:text="全部户型"
+            android:textSize="18dp"
             android:textStyle="bold"
             />
-        <ImageView
+        <!--<ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_right"
@@ -107,13 +107,13 @@
             android:layout_marginEnd="47dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true" />-->
     </RelativeLayout>
 
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sousuo"
         android:text="搜索"

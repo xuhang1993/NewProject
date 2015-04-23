@@ -33,6 +33,7 @@ import java.util.ArrayList;
 
 import Adapter.AreaAdapter;
 import Bean.AreaNmae;
+import progresdialog.CustormProgressDialog;
 
 
 public class ThridActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
@@ -48,6 +49,8 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
     private AreaAdapter adapter;
     private String TAG="name";
     private RequestParams requestParams;
+    private String price1;
+    private CustormProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
         cityid = getIntent().getStringExtra("id");
         name = getIntent().getStringExtra("name");
 
+        price1 = getIntent().getStringExtra("price1");
         toolbar = (Toolbar) findViewById(R.id.toolbar4);
 
         getSupportActionBar().hide();
@@ -67,10 +71,14 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
         list=new ArrayList<AreaNmae>();
 
         adapter=new AreaAdapter(ThridActivity.this,list);
-        listView.setAdapter(adapter);
-        ProgressBar bar= (ProgressBar) findViewById(R.id.progressBar);
-        listView.setEmptyView(bar);
 
+        dialog = new CustormProgressDialog(ThridActivity.this,"正在加载...", R.anim.progressdialog_anim);
+
+        dialog.show();
+
+        listView.setAdapter(adapter);
+       /* ProgressBar bar= (ProgressBar) findViewById(R.id.progressBar);
+        listView.setEmptyView(bar);*/
         listView.setOnItemClickListener(this);
         getList();
 
@@ -116,6 +124,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
                     e.printStackTrace();
                 }
 
+                dialog.dismiss();
 
             }
 
@@ -124,6 +133,7 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
 
                 Toast.makeText(ThridActivity.this,"下载失败!",Toast.LENGTH_SHORT).show();
 
+                dialog.dismiss();
             }
         });
 
@@ -140,9 +150,12 @@ public class ThridActivity extends ActionBarActivity implements AdapterView.OnIt
         Intent i=new Intent();
         i.putExtra("id",cityid);
         i.putExtra("name",name);
+        i.putExtra("price",price1);
         i.putExtra("areaName",list.get(position).getAreaName());
+        i.putExtra("areaId",list.get(position).getAreaId());
         i.setClass(ThridActivity.this,SecrchActivity.class);
 
+        this.finish();
         startActivity(i);
 
     }

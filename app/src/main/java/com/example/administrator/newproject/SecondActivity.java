@@ -72,7 +72,7 @@ public class SecondActivity extends ActionBarActivity implements Toolbar.OnMenuI
         slidingMenu.setMode(SlidingMenu.LEFT);
         slidingMenu.setMenu(R.layout.menu);
         slidingMenu.setBehindWidth(400);
-        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         slidingMenu.setShadowWidth(50);
         slidingMenu.setShadowDrawable(R.drawable.shadow);
         slidingMenu.setFadeDegree(0.40f);
@@ -172,7 +172,7 @@ public class SecondActivity extends ActionBarActivity implements Toolbar.OnMenuI
 
         startActivity(i);
 
-        finish();
+
 
 
     }

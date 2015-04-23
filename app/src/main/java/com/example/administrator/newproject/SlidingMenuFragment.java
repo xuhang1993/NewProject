@@ -26,7 +26,7 @@ import android.widget.Toast;
  */
 public class SlidingMenuFragment extends Fragment {
 
-    String name[]={"用户反馈","评价打分","检测新版本","免责声明","关于我们","退出"};
+    String name[]={"用户反馈","评价打分","检测新版本","免责声明","关于我们","附近房源"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,12 +42,6 @@ public class SlidingMenuFragment extends Fragment {
                 switch (position){
                     case 0:  break;
                     case 1:
-
-
-
-
-
-
                         break;
                     case 2:
                         PopupWindow popupWindow = new PopupWindow(getActivity());
@@ -85,6 +79,11 @@ public class SlidingMenuFragment extends Fragment {
                         startActivity(i);
                         break;
                     case 5:
+                        Intent intent1=new Intent();
+                        intent1.setClass(getActivity(),BaiduMapActivity.class);
+                        startActivity(intent1);
+                        break;
+                   /* case 6:
                         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                         builder.setTitle("退出程序")
                                 .setPositiveButton("退出",new DialogInterface.OnClickListener() {
@@ -94,7 +93,7 @@ public class SlidingMenuFragment extends Fragment {
                                     }
                                 }).setNegativeButton("取消",null ).show();
 
-                        break;
+                        break;*/
 
                 }
             }

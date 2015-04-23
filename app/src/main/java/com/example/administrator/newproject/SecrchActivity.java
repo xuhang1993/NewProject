@@ -1,30 +1,16 @@
 package com.example.administrator.newproject;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.lidroid.xutils.HttpUtils;
-import com.lidroid.xutils.exception.HttpException;
-import com.lidroid.xutils.http.RequestParams;
-import com.lidroid.xutils.http.ResponseInfo;
-import com.lidroid.xutils.http.callback.RequestCallBack;
-import com.lidroid.xutils.http.client.HttpRequest;
 
-import org.json.JSONObject;
+import progresdialog.CustormProgressDialog;
 
 
 public class SecrchActivity extends ActionBarActivity {
@@ -33,6 +19,11 @@ public class SecrchActivity extends ActionBarActivity {
     private RequestQueue requestQueue;
     private String cityId;
     private String name;
+    private String areaName;
+    private String price1;
+    private Button sousuo;
+    private String areaId;
+    private String priceId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +36,6 @@ public class SecrchActivity extends ActionBarActivity {
         cityId = getIntent().getStringExtra("id");
         name = getIntent().getStringExtra("name");
 
-
-
-        //数据持久化
-
-       /* SharedPreferences preferences=getSharedPreferences("idAndname", Context.MODE_PRIVATE);
-
-        SharedPreferences.Editor editor=preferences.edit();
-        editor.putString("id",cityId);
-        editor.putString("name",name);
-
-        editor.commit();*/
-
         getSupportActionBar().hide();
 
 
@@ -64,11 +43,48 @@ public class SecrchActivity extends ActionBarActivity {
         TextView price= (TextView) findViewById(R.id.price);
 
 
-        String areaName=getIntent().getStringExtra("areaName");
-        if (areaName!=null){
+        areaName = getIntent().getStringExtra("areaName");
+        areaId = getIntent().getStringExtra("areaId");
+        if (areaName !=null){
 
             quyu.setText(areaName);
         }
+
+        price1 = getIntent().getStringExtra("price");
+        priceId = getIntent().getStringExtra("priceId");
+        if (price1 !=null){
+
+            price.setText(price1);
+
+        }
+
+
+        sousuo = (Button) findViewById(R.id.sousuo);
+        sousuo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent();
+                if (areaName==null||price1==null){
+
+                    Toast.makeText(SecrchActivity.this,"请选择区域或价格!",Toast.LENGTH_SHORT).show();
+
+                }else{
+                    i.putExtra("areaName", areaName);
+                    i.putExtra("areaId",areaId);
+                    i.putExtra("price",price1);
+                    i.putExtra("priceId",priceId);
+                    i.putExtra("id",cityId);
+                    i.putExtra("name",name);
+                    i.setClass(SecrchActivity.this, SerchResultActivity.class);
+                    startActivity(i);
+                }
+
+
+
+
+            }
+        });
 
         quyu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,9 +95,15 @@ public class SecrchActivity extends ActionBarActivity {
                 String cityid=preferences1.getString("id",null);
                 String cityName=preferences1.getString("name",null);*/
                 i.putExtra("id", cityId);
+                if (price1!=null){
+
+                    i.putExtra("price1",price1);
+
+                }
                 i.putExtra("name",name);
                 i.setClass(SecrchActivity.this,ThridActivity.class);
 
+                SecrchActivity.this.finish();
                 startActivity(i);
             }
         });
@@ -90,11 +112,17 @@ public class SecrchActivity extends ActionBarActivity {
             public void onClick(View v) {
 
                 Intent i =new Intent();
+                if (areaName!=null){
 
+                    i.putExtra("areaName",areaName);
+                    i.putExtra("areaId",areaId);
+
+
+                }
                 i.putExtra("id",cityId);
                 i.putExtra("name",name);
                 i.setClass(SecrchActivity.this,PriceActivity.class);
-
+                SecrchActivity.this.finish();
                 startActivity(i);
 
             }
@@ -111,7 +139,9 @@ public class SecrchActivity extends ActionBarActivity {
         i.putExtra("name",name);
         i.putExtra("id",cityId);
 
+
         i.setClass(SecrchActivity.this,SecondActivity.class);
+        this.finish();
         startActivity(i);
     }
 }
